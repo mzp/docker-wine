@@ -23,6 +23,7 @@ RUN curl -o /usr/share/wine/gecko/wine_gecko-2.47-x86_64.msi http://dl.winehq.or
 RUN curl -o /usr/bin/winetricks https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks && chmod +x /usr/bin/winetricks
 
 RUN echo 'Xvfb $DISPLAY -screen 0 1024x768x24 &' >> /root/.bashrc
+
 RUN echo 'x11vnc -display $DISPLAY -bg -nopw -listen 0.0.0.0 -xkb' >> /root/.bashrc
 
 ENV DISPLAY :1
