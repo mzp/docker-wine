@@ -24,7 +24,7 @@ RUN curl -o /usr/bin/winetricks https://raw.githubusercontent.com/Winetricks/win
 
 RUN echo 'Xvfb $DISPLAY -screen 0 1024x768x24 &' >> /root/.bashrc
 
-RUN echo 'x11vnc -display $DISPLAY -bg -nopw -listen 0.0.0.0 -xkb' >> /root/.bashrc
+RUN echo 'x11vnc -forever -display $DISPLAY -bg -nopw -listen 0.0.0.0 -xkb' >> /root/.bashrc
 
 ENV DISPLAY :1
 
